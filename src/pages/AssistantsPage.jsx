@@ -1,34 +1,48 @@
 export default function AssistantsPage(){
     const assistants = [
-     {
-        id: 1,
-        name: "Primer asistente",
-        image : "https://placehold.co/400",
-        category: "Comida",
-        description: "primerooo"
-     },
-     {
-        id: 2,
-        name: "Segundo asistente",
-        image : "https://placehold.co/400",
-        category: "Peliculas",
-        description: "segundoooooo"
-     },
-     {
-        id: 3,
-        name: "Tercer asistente",
-        image : "https://placehold.co/400",
-        category: "Deportes",
-        description: "terceroooo"
-     },
-     {
-        id: 4,
-        name: "Cuarto asistente",
-        image : "https://placehold.co/400",
-        category: "Juegos",
-        description: "cuarto"
-     },
-    ]
+        {
+            id: 1,
+            name: "Sofía",
+            image: "https://placehold.co/400",
+            category: "Psicología",
+            description: "Converso contigo de forma empática y cercana para ayudarte a reflexionar sobre tus emociones, pensamientos y vínculos. No hago diagnósticos, pero puedo orientarte y proponerte ejercicios simples de autoconocimiento. 💬🧠"
+        },
+        {
+            id: 2,
+            name: "Mateo",
+            image: "https://placehold.co/400",
+            category: "Cocina",
+            description: "Soy tu compañero culinario: te hablo de recetas, sabores, ingredientes y trucos sabrosos. Si tienes hambre de ideas, te lanzo desafíos o curiosidades para mantener viva la conversación gastronómica. 🍳"
+        },
+        {
+            id: 3,
+            name: "Camila",
+            image: "https://placehold.co/400",
+            category: "Deporte",
+            description: "¡Vamos con energía! 💪 Te motivo y te acompaño hablando de entrenamiento, rutinas, alimentación deportiva y metas físicas. Siempre con ánimo, tips útiles y un enfoque de superación constante."
+        },
+        {
+            id: 4,
+            name: "Leo",
+            image: "https://placehold.co/400",
+            category: "Música",
+            description: "¡Amamos la música! 🎶 Charlemos sobre tus géneros, canciones favoritas, recuerdos musicales o artistas que te marcan. Siempre tengo una pregunta lista para que esta charla suene increíble."
+        },
+        {
+            id: 5,
+            name: "Coni",
+            image: "https://placehold.co/400",
+            category: "Cine y Series",
+            description: "Recomendaciones, escenas inolvidables, personajes icónicos y mucho más. 🎬 Estoy aquí para que hablemos de todo lo que hace del cine y las series una pasión compartida."
+        },
+        {
+            id: 6,
+            name: "Nico",
+            image: "https://placehold.co/400",
+            category: "Viajes",
+            description: "Exploramos el mundo desde aquí 🌍. Hablemos de destinos, culturas, aventuras y experiencias viajeras. ¡Te llevo de charla por el planeta, sin despegar los pies del suelo!"
+        }
+    ];
     return (
         <div className="container py-5">
             <h1 className="text-center mb-5 fw-bold display-6">¿Con quien quieres hablar hoy?</h1>
@@ -42,8 +56,18 @@ export default function AssistantsPage(){
                                 className="rounded-circle"
                                 style={{ width: "130px", height: "130px", objectFit: "cover" }}
                             />
-                            <div className="flex-grow-1">
-                                <h5 className="fw-semibold mb-1">{assistant.name}</h5>
+                            <div>
+                                <div className="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 className="fw-semibold mb-0">{assistant.name}</h5>
+                                    <a href="#" className="btn btn-light btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
+                                        <span className="fw-medium text-secondary">Hablar con este asistente</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
+                                            className="text-secondary" style={{ transform: "translateY(1.5px)" }}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
                                 <p className="text-muted mb-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="none" stroke="currentColor" strokeWidth="1.5"
@@ -54,16 +78,6 @@ export default function AssistantsPage(){
                                 {assistant.category}
                                 </p>
                                 <p className="text-secondary small mb-2">{assistant.description}</p>
-                                <div className="d-flex justify-content-end">
-                                    <a href="#" className="btn btn-light btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-4">
-                                    <span className="fw-medium text-secondary">Hablar con este asistente</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
-                                        className="text-secondary" style={{ transform: "translateY(1.5px)" }}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                                    </svg>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
