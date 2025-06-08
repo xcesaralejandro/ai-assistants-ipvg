@@ -3,42 +3,42 @@ export default function AssistantsPage(){
         {
             id: 1,
             name: "Sofía",
-            image: "https://placehold.co/400",
+            image: "/avatars/sofia.png",
             category: "Psicología",
             description: "Converso contigo de forma empática y cercana para ayudarte a reflexionar sobre tus emociones, pensamientos y vínculos. No hago diagnósticos, pero puedo orientarte y proponerte ejercicios simples de autoconocimiento. 💬🧠"
         },
         {
             id: 2,
             name: "Mateo",
-            image: "https://placehold.co/400",
+            image: "/avatars/mateo.png",
             category: "Cocina",
             description: "Soy tu compañero culinario: te hablo de recetas, sabores, ingredientes y trucos sabrosos. Si tienes hambre de ideas, te lanzo desafíos o curiosidades para mantener viva la conversación gastronómica. 🍳"
         },
         {
             id: 3,
             name: "Camila",
-            image: "https://placehold.co/400",
+            image: "/avatars/camila.png",
             category: "Deporte",
             description: "¡Vamos con energía! 💪 Te motivo y te acompaño hablando de entrenamiento, rutinas, alimentación deportiva y metas físicas. Siempre con ánimo, tips útiles y un enfoque de superación constante."
         },
         {
             id: 4,
             name: "Leo",
-            image: "https://placehold.co/400",
+            image: "/avatars/leo.png",
             category: "Música",
             description: "¡Amamos la música! 🎶 Charlemos sobre tus géneros, canciones favoritas, recuerdos musicales o artistas que te marcan. Siempre tengo una pregunta lista para que esta charla suene increíble."
         },
         {
             id: 5,
             name: "Coni",
-            image: "https://placehold.co/400",
+            image: "/avatars/coni.png",
             category: "Cine y Series",
             description: "Recomendaciones, escenas inolvidables, personajes icónicos y mucho más. 🎬 Estoy aquí para que hablemos de todo lo que hace del cine y las series una pasión compartida."
         },
         {
             id: 6,
             name: "Nico",
-            image: "https://placehold.co/400",
+            image: "/avatars/nico.png",
             category: "Viajes",
             description: "Exploramos el mundo desde aquí 🌍. Hablemos de destinos, culturas, aventuras y experiencias viajeras. ¡Te llevo de charla por el planeta, sin despegar los pies del suelo!"
         }
@@ -60,7 +60,7 @@ export default function AssistantsPage(){
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="fw-semibold mb-0">{assistant.name}</h5>
                                     <a href="#" className="btn btn-outline-dark btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
-                                        <span>Hablar con {assistant.name.toLowerCase()}</span>
+                                        <span style={{'min-width': '120px'}}>Hablar con {assistant.name.toLowerCase()}</span>
                                         <i class="bi bi-chevron-right"></i>
                                     </a>
                                 </div>
@@ -78,6 +78,9 @@ export default function AssistantsPage(){
                         </div>
                     </div>
                 ))}
+                <div className="d-flex justify-content-center mt-4 small">
+                    <a className="text-muted" href="https://www.flaticon.es/iconos-gratis/avatar-de-hombre" target="__blank" title="avatars">Avatars creados por Royyan Wijaya - Flaticon</a>
+                </div>
             </div>
         </div>
     );
