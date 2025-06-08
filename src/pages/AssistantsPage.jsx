@@ -59,13 +59,9 @@ export default function AssistantsPage(){
                             <div>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="fw-semibold mb-0">{assistant.name}</h5>
-                                    <a href="#" className="btn btn-light btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
-                                        <span className="fw-medium text-secondary">Hablar con este asistente</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
-                                            className="text-secondary" style={{ transform: "translateY(1.5px)" }}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                                        </svg>
+                                    <a href="#" className="btn btn-outline-dark btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
+                                        <span>Hablar con {assistant.name.toLowerCase()}</span>
+                                        <i class="bi bi-chevron-right"></i>
                                     </a>
                                 </div>
                                 <p className="text-muted mb-1">
