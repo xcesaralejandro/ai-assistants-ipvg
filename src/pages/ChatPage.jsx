@@ -5,18 +5,15 @@ import { NavLink } from "react-router";
 
 export default function ChatPage() {
     const params = useParams();
-
+    const [messageHistory, setMessageHistory] = useState([]);
+    useEffect(() => {
+        sendMessage(assistant.prompt)
+    }, []);
     const assistant = assistants.find(assistant => assistant.id === parseInt(params.assistant_id));
 
     if (!assistant) {
         return <div className="container py-5"><h1 className="text-center">Asistente no encontrado</h1></div>;
     }
-
-    const [messageHistory, setMessageHistory] = useState([]);
-
-    useEffect(() => {
-        sendMessage(assistant.prompt)
-    }, []);
 
     async function sendForm(formData) {
         const message = formData.get('message').trim();
@@ -68,7 +65,6 @@ export default function ChatPage() {
         return data.candidates?.[0]?.content?.parts?.[0]?.text ?? "No se obtuvo respuesta del modelo.";
     }
 
-
     return (
         <div className="vh-100 d-flex flex-column">
             <div className="border-bottom p-3 bg-white shadow-sm">
@@ -105,10 +101,7 @@ export default function ChatPage() {
                         <input type="text" name="message" className="form-control form-control-md" placeholder="Escribe tu mensaje..." />
                         <button type="submit" className="btn btn-dark btn-md d-flex align-items-center gap-2">
                             <span>Enviar</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" className="mt-1"
-                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                            </svg>
+                            <i class="bi bi-send"></i>
                         </button>
                     </form>
                 </div>
