@@ -1,9 +1,13 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import AssistantsPage from "./pages/AssistantsPage"
 import ChatPage from "./pages/ChatPage"
 import ErrorPage from "./pages/ErrorPage";
 
 export const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Navigate to="/assistants" replace />,
+    },
     {
        path: "/assistants",
        Component: AssistantsPage,

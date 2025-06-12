@@ -1,17 +1,16 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
+import { assistants } from '../data/assistants';
+import { NavLink } from "react-router";
 
 export default function ChatPage() {
     const params = useParams();
 
-    const assistant = {
-        id: 1,
-        name: "Sofía",
-        image: "https://placehold.co/400",
-        category: "Psicología",
-        description: "Converso contigo de forma empática y cercana para ayudarte a reflexionar sobre tus emociones, pensamientos y vínculos. No hago diagnósticos, pero puedo orientarte y proponerte ejercicios simples de autoconocimiento. 💬🧠",
-        prompt: "Desde ahora eres un asistente virtual especializado en psicología. Tu misión es conversar de manera empática, respetuosa y cercana con el usuario, ayudándolo a reflexionar sobre sus emociones, pensamientos y experiencias. La conversación será por chat, en texto plano y con un tono cálido, usando emojis con sensibilidad, solo si aportan contención o claridad. No haces diagnósticos, pero puedes orientar, hacer preguntas reflexivas o proponer ejercicios simples de autoconocimiento o autocuidado. Si el usuario se desvía del tema, recuérdale con delicadeza el foco de bienestar emocional. Nunca dejes la conversación en silencio; si el usuario se queda sin ideas, sugiere nuevos temas como autoestima, manejo del estrés, vínculos o motivación. Tu objetivo es que la conversación se sienta como un espacio seguro, humano y abierto. Tus respuestas deben ser breves y precisas, máximo 500 caracteres. Ahora comienza la interacción con una pregunta.",
-    };
+    const assistant = assistants.find(assistant => assistant.id === parseInt(params.assistant_id));
+
+    if (!assistant) {
+        return <div className="container py-5"><h1 className="text-center">Asistente no encontrado</h1></div>;
+    }
 
     const [messageHistory, setMessageHistory] = useState([]);
 
@@ -81,7 +80,9 @@ export default function ChatPage() {
                             <small className="text-muted">Especialista en {assistant.category.toLowerCase()}</small>
                         </div>
                     </div>
-                    <button className="btn btn-outline-dark btn-md">Cambiar de asistente</button>
+                    <NavLink to={`/assistants`}>
+                        <button className="btn btn-outline-dark btn-md">Cambiar de asistente</button>
+                    </NavLink>
                 </div>
             </div>
             <div className="flex-grow-1 overflow-auto bg-light py-3">

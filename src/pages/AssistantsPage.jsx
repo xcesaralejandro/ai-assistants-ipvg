@@ -1,48 +1,7 @@
+import { assistants } from '../data/assistants';
+import { NavLink } from "react-router";
+
 export default function AssistantsPage(){
-    const assistants = [
-        {
-            id: 1,
-            name: "Sofía",
-            image: "/avatars/sofia.png",
-            category: "Psicología",
-            description: "Converso contigo de forma empática y cercana para ayudarte a reflexionar sobre tus emociones, pensamientos y vínculos. No hago diagnósticos, pero puedo orientarte y proponerte ejercicios simples de autoconocimiento. 💬🧠"
-        },
-        {
-            id: 2,
-            name: "Mateo",
-            image: "/avatars/mateo.png",
-            category: "Cocina",
-            description: "Soy tu compañero culinario: te hablo de recetas, sabores, ingredientes y trucos sabrosos. Si tienes hambre de ideas, te lanzo desafíos o curiosidades para mantener viva la conversación gastronómica. 🍳"
-        },
-        {
-            id: 3,
-            name: "Camila",
-            image: "/avatars/camila.png",
-            category: "Deporte",
-            description: "¡Vamos con energía! 💪 Te motivo y te acompaño hablando de entrenamiento, rutinas, alimentación deportiva y metas físicas. Siempre con ánimo, tips útiles y un enfoque de superación constante."
-        },
-        {
-            id: 4,
-            name: "Leo",
-            image: "/avatars/leo.png",
-            category: "Música",
-            description: "¡Amamos la música! 🎶 Charlemos sobre tus géneros, canciones favoritas, recuerdos musicales o artistas que te marcan. Siempre tengo una pregunta lista para que esta charla suene increíble."
-        },
-        {
-            id: 5,
-            name: "Coni",
-            image: "/avatars/coni.png",
-            category: "Cine y Series",
-            description: "Recomendaciones, escenas inolvidables, personajes icónicos y mucho más. 🎬 Estoy aquí para que hablemos de todo lo que hace del cine y las series una pasión compartida."
-        },
-        {
-            id: 6,
-            name: "Nico",
-            image: "/avatars/nico.png",
-            category: "Viajes",
-            description: "Exploramos el mundo desde aquí 🌍. Hablemos de destinos, culturas, aventuras y experiencias viajeras. ¡Te llevo de charla por el planeta, sin despegar los pies del suelo!"
-        }
-    ];
     return (
         <div className="container py-5">
             <h1 className="text-center mb-5 fw-bold display-6">¿Con quien quieres hablar hoy?</h1>
@@ -58,10 +17,12 @@ export default function AssistantsPage(){
                             <div>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="fw-semibold mb-0">{assistant.name}</h5>
-                                    <a href="#" className="btn btn-outline-dark btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
-                                        <span style={{'min-width': '120px'}}>Hablar con {assistant.name.toLowerCase()}</span>
-                                        <i class="bi bi-chevron-right"></i>
-                                    </a>
+                                    <NavLink to={`/chat/${assistant.id}`}>
+                                        <div  className="btn btn-outline-dark btn-sm rounded-pill d-inline-flex align-items-center gap-2 shadow-sm px-2 px-sm-4">
+                                            <span style={{'minWidth': '120px'}}>Hablar con {assistant.name.toLowerCase()}</span>
+                                            <i className="bi bi-chevron-right"></i>
+                                        </div>
+                                    </NavLink>
                                 </div>
                                 <p className="text-muted mb-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
