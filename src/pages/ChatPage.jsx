@@ -101,7 +101,7 @@ export default function ChatPage() {
                         <input type="text" name="message" className="form-control form-control-md" placeholder="Escribe tu mensaje..." />
                         <button type="submit" className="btn btn-dark btn-md d-flex align-items-center gap-2">
                             <span>Enviar</span>
-                            <i class="bi bi-send"></i>
+                            <i className="bi bi-send"></i>
                         </button>
                     </form>
                 </div>

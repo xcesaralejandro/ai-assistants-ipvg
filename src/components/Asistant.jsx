@@ -23,7 +23,7 @@ export function Assistant({id, name, category, image, description}) {
               </NavLink>
             </div>
             <p className="text-muted mb-1">
-              <i class="bi bi-tag me-1"></i>
+              <i className="bi bi-tag me-1"></i>
               {category}
             </p>
             <p className="text-secondary small mb-2">{description}</p>
