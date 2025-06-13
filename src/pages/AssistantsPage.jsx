@@ -1,5 +1,5 @@
 import { Assistant } from '../components/Asistant';
-import { assistants } from '../data/assistants';
+import { assistants } from '../data/Assistants';
 import { useNavigate } from 'react-router';
 
 export default function AssistantsPage(){
